@@ -48,7 +48,7 @@ pipeline {
         stage('MAVEN BUILD & DEPLOY TO NEXUS REPO') {
             steps {
                 echo 'Hello World'
-                nexusArtifactUploader artifacts: [[artifactId: '>tpAchatProject', classifier: '', file: 'target/>tpAchatProject-1.0.jar', type: 'jar']], credentialsId: 'c4e9649d-5f97-4f24-9ced-184dbd641c2d', groupId: 'com.esprit.examen', nexusUrl: '192.168.56.10:8081/repository/maven-releases/', nexusVersion: 'nexus3', protocol: 'http', repository: 'nexusdeploymentrepo', version: '1.0'
+                nexusArtifactUploader artifacts: [[artifactId: 'tpAchatProject', classifier: '', file: 'target/tpAchatProject-1.0.jar', type: 'jar']], credentialsId: 'c4e9649d-5f97-4f24-9ced-184dbd641c2d', groupId: 'com.esprit.examen', nexusUrl: '192.168.56.10:8081/repository/maven-releases/', nexusVersion: 'nexus3', protocol: 'http', repository: 'nexusdeploymentrepo', version: '1.0'
             }
         }
         
