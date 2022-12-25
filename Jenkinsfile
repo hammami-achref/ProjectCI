@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Cloning project') {
             steps {
-                // Get some code from a GitHub repository
+                // clone project from git 
                 git branch: 'main' , url: 'https://github.com/hammami-achref/ProjectCI.git'
                 echo "-------------------Clone Stage Done ------------------------------- "
             }
