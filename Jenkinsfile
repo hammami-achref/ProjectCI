@@ -39,7 +39,6 @@ pipeline {
         }
         stage('deploy to nexus') {
             steps {
-                echo 'Hello World'
                 nexusArtifactUploader artifacts: [[artifactId: 'tpAchatProject', classifier: '', file: 'target/tpAchatProject-1.0.jar', type: 'jar']], credentialsId: '40b847b0-8db8-4f34-b768-0f1179cc6f3e', groupId: 'com.esprit.examen', nexusUrl: '192.168.1.152:8081/repository/maven-releases/', nexusVersion: 'nexus3', protocol: 'http', repository: 'nexusdeploymentrepo', version: '1.0'
             }
         }
