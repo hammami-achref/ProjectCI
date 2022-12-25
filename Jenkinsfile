@@ -17,6 +17,34 @@ pipeline {
                 echo "-------------------Clone Stage Done ------------------------------- "
             }
         }
+        stage("MAVEN CLEAN") {
+            steps {
+                script {
+                    sh "mvn -Dmaven.test.failure.ignore=true clean"
+                }
+            }
+        }
+        stage("MAVEN COMPILE") {
+            steps {
+                script {
+                    sh "mvn -Dmaven.test.failure.ignore=true compile"
+                }
+            }
+        }
+        stage("MAVEN TEST") {
+            steps {
+                script {
+                    sh "mvn -Dmaven.test.failure.ignore=true test"
+                }
+            }
+        }
+        stage("MAVEN BUILD") {
+            steps {
+                script {
+                    sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                }
+            }
+        }
         stage('MAVEN BUILD & DEPLOY TO NEXUS REPO') {
             steps {
                 echo 'Hello World'
