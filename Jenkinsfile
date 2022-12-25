@@ -13,21 +13,21 @@ pipeline {
         stage('Cloning project') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main', credentialsId: '917c9acc-ac4d-4111-9e91-73428fd9539e', url: 'https://github.com/Shaimaskima/Spring.git/'
+                git branch: 'main', credentialsId: '917c9acc-ac4d-4111-9e91-73428fd9539e', url: 'https://github.com/Shaimaskima/Spring.git /'
                 echo "-------------------Clone Stage Done ------------------------------- "
             }
         }
         stage("MAVEN CLEAN") {
             steps {
                 script {
-                    sh "mvn -Dmaven.test.failure.ignore=true clean"
+                    sh "mvn -X -Dmaven.test.failure.ignore=true clean"
                 }
             }
         }
         stage("MAVEN COMPILE") {
             steps {
                 script {
-                    sh "mvn -Dmaven.test.failure.ignore=true compile"
+                    sh "mvn -X -Dmaven.test.failure.ignore=true compile"
                 }
             }
         }
