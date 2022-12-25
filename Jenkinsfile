@@ -13,7 +13,7 @@ pipeline {
         stage('Cloning project') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'main', credentialsId: '917c9acc-ac4d-4111-9e91-73428fd9539e', url: 'https://github.com/Shaimaskima/Spring.git/'
+                git branch: 'main' , url: 'https://github.com/hammami-achref/ProjectCI.git/'
                 echo "-------------------Clone Stage Done ------------------------------- "
             }
         }
