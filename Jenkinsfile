@@ -2,14 +2,14 @@
 pipeline {
     agent any
     stages {
-        stage('cloning project') {
+        stage('Cloning project') {
             steps {
                 // clone project from git 
                 git branch: 'main' , url: 'https://github.com/hammami-achref/ProjectCI.git'
                 echo "-------------------Clone Stage Done ------------------------------- "
             }
         }
-        stage("maven clean") {
+        stage("Maven clean") {
             steps {
                 script {
                     sh "mvn -X -Dmaven.test.failure.ignore=true clean"
