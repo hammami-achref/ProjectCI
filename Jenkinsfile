@@ -2,7 +2,7 @@
 pipeline {
     agent any
     stages {
-        stage('cloning project') {
+        stage('Cloning project') {
             steps {
                 // clone project from git 
                 git branch: 'main' , url: 'https://github.com/hammami-achref/ProjectCI.git'
