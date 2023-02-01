@@ -1,1 +1,21 @@
+version: '3.3'
+services:
+  database:
+    image: mysql:5.7
+    container_name: SQL
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: devops
+    volumes:
+      - /home/mysql/data:/var/lib/mysql
+    ports:
+      - 3306:3306
 
+  spring-boot:
+    image: achrefh/achrefh:2
+    container_name: SPRING
+    ports:
+      - 8089:8089
+    depends_on:
+      - database
+    restart: on-failure
